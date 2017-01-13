@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="a-html">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Virtual Reality Demo</title>
+
+    <!-- Styles ---->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!- data for mobile vr clients -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- A-frame for VR Content & Text -->
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+</head>
+
+<body class="a-body a-grabbing">
+    <h1>Virtual Reality Demo</h1>
+    <div id="vr-demo">
+      <a-assets>
+        <img id="texture" src="../images/ignasi_pattern_s.png">
+        <img id="moonTexture" src="../images/mYmmbrp.jpg">
+        <img id="skyTexture" src="../images/sechelt.jpg">
+        <img id="groundTexture" src="../images/floor.jpg">
+      </a-assets>
+      <a-scene class="fullscreen" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="">
+        <a-entity bmfont-text="text: VR In the Classroom; color: #BBB" position="-0.9 0.2 -3" scale="1.5 1.5 1.5"></a-entity>
+        <a-box id="red-box" color="red" src="#texture" position="4 4 -3" rotation="10 0 45" fog="true" scale="0.5 0.5 0.5" visible="" material="" geometry="">
+          <a-animation attribute="position" to="1 2 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-sphere color="blue" position="3 1 2" rotation="" scale="" visible="" material="" geometry="">
+            <a-animation attribute="position" to="3 3 -8" direction="alternate" dur="8000" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-sphere src="#moonTexture" color="yellow" position="-2 4 -16" rotation="" scale="" visible="" material="" geometry="">
+          <a-animation attribute="position" to="-4 1 -8" direction="alternate" dur="1000" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" position="" scale="" visible="" material="" geometry=""></a-plane>
+        <a-sky src="#skyTexture" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
+    </div>
+
+
+
+
+</body></html>
